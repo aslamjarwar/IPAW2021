@@ -1,0 +1,111 @@
+document
+  default <http://open.org/>
+  prefix gond <http://gond.com/>
+  prefix bu <http://bu.edu>
+  prefix nrds <http://bu.edu/nrds/>
+  prefix lab1 <http://bu.edu/nrds/lab1/>
+  prefix lab2 <http://bu.edu/nrds/lab2/>
+  prefix op <http://open.org>
+  
+  wasInformedBy(32, gond:09)
+  wasInformedBy(nrds:10, gond:08)
+  wasInformedBy(lab1:20, nrds:18)
+  wasInformedBy(lab2:25, nrds:19)
+  wasInformedBy(33, lab1:24)
+  wasInformedBy(34, lab2:30)
+  bundle gond:GOND
+    default <http://gond.com/>
+    
+    entity(01)
+    entity(02)
+    entity(03)
+    activity(04, -, -)
+    activity(05, -, -)
+    used(04, 01, -)
+    used(05, 01, -)
+    wasGeneratedBy(03, 05, -)
+    wasGeneratedBy(02, 04, -)
+    agent(06)
+    agent(07)
+    wasAssociatedWith(04, 06, -)
+    wasAssociatedWith(05, 06, -)
+    actedOnBehalfOf(06, 07, -)
+    activity(08, -, -)
+    activity(09, -, -)
+    used(09, 02, -)
+    used(08, 03, -)
+  endBundle
+  bundle nrds:NRDS
+    default <http://bu.edu/nrds/>
+    
+    activity(10, -, -)
+    entity(11)
+    wasGeneratedBy(11, 10, -)
+    activity(12, -, -)
+    activity(13, -, -)
+    agent(14)
+    agent(15)
+    wasAssociatedWith(12, 14, -)
+    wasAssociatedWith(13, 14, -)
+    actedOnBehalfOf(14, 15, -)
+    used(12, 11, -)
+    used(13, 11, -)
+    entity(16)
+    entity(17)
+    wasGeneratedBy(16, 12, -)
+    wasGeneratedBy(17, 13, -)
+    activity(18, -, -)
+    activity(19, -, -)
+    used(18, 16, -)
+    used(19, 17, -)
+  endBundle
+  bundle lab1:Lab
+    default <http://bu.edu/nrds/lab1/>
+    
+    activity(20, -, -)
+    entity(21)
+    wasGeneratedBy(21, 20, -)
+    used(00, 21, -)
+    activity(00, -, -)
+    agent(22)
+    wasAssociatedWith(00, 22, -)
+    entity(23)
+    wasGeneratedBy(23, 00, -)
+    activity(24, -, -)
+    used(24, 23, -)
+  endBundle
+  bundle lab2:Lab
+    default <http://bu.edu/nrds/lab2/>
+    
+    activity(25, -, -)
+    entity(26)
+    wasGeneratedBy(26, 25, -)
+    activity(27, -, -)
+    agent(28)
+    wasAssociatedWith(27, 28, -)
+    used(27, 26, -)
+    entity(29)
+    wasGeneratedBy(29, 27, -)
+    activity(30, -, -)
+    used(30, 29, -)
+  endBundle
+  bundle op:Open
+    default <http://open.org/>
+    
+    entity(31)
+    activity(32, -, -)
+    wasGeneratedBy(31, 32, -)
+    activity(33, -, -)
+    activity(34, -, -)
+    entity(35)
+    entity(36)
+    wasGeneratedBy(35, 33, -)
+    wasGeneratedBy(36, 34, -)
+    activity(37, -, -)
+    entity(38)
+    used(37, 35, -)
+    used(37, 36, -)
+    used(37, 31, -)
+    wasGeneratedBy(38, 37, -)
+  endBundle
+endDocument
